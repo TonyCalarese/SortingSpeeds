@@ -1,7 +1,7 @@
 /*
 Author: Anthony Calarese, Tony Calarese
 Class of Referenced code : CSI - 281 - 01
-Assignment : PA3 Part 1
+Assignment : Research Assignemnt CSI 370, Continued from CSI 281-01
 Date Assigned : September 14, 2017
 Due Date : September 21, 2017 by 9 : 30am
 Description :
@@ -43,119 +43,35 @@ void get_C_Menu();
 string getMethod();
 
 template <typename T>
-void printArray(T size, T *Data) {
-	for (int i = 0; i < size; i++)
+void printArray(T size, T *mData) {
+
+	for (T i = 0; i < size; i++)
 	{
-		for (int j = 0; j < 5; j++)
+		for (int j = 0; j < 10; j++)
 		{
-			cout << Data[i] << " ";
+			cout << mData[i] << " ";
 			i++;
+			if (i >= size)
+			{
+				break;
+			}
 		}
 		cout << endl;
 	}
 
-
-	delete Data;
-}
-template <typename T>
-void executeSort(string method, int size, T *Data) {
-	/*
-	The only things that method can be is
-	quickC, selectC, insertC
-	thus far
-
-	*/
-	/*
-	//Implement Timer
-	TimerSystem timer;
-
-	timer.startClock();
-	//timing and the sorting
-
-
-	cout.setf(ios::fixed | ios::showpoint);
-	cout.precision(8);
-	*/
 }
 
-//Assembly Based Functions
-//------------------------------------------------
-
-
-
-
-
-//Selection Sorting
-/*
-Pre:numbers and size
-Post: print(size, numbers)
-purpose: Selection sort uses a selectioning method when it divides, by finding the minimum number and then rearranging by counting upwards
-*/
-template <typename T>
-void selectionSort(T size, T numbers[]) {
-	T minIndex, tmp;
-
-	for (T i = 0; i < size - 1; i++)
-	{
-		minIndex = i;
-		for (T j = i + 1; j < size; j++)
-		{
-			if (numbers[j] < numbers[minIndex])
-			{
-				minIndex = j;
-			}
-		}
-		if (minIndex != i)
-		{
-			tmp = numbers[i];
-			numbers[i] = numbers[minIndex];
-			numbers[minIndex] = tmp;
-		}
-	}
-}
-
-//Insertion Sorting
-/*
-pre:size, numbers
-post:print(size, numbers)
-purpose: This algorithm is designed to sort an array using the insertion method as if it was like trading cards in your hand, picking and then placing the cards in the right order.
-This one was challening so I needed online help
-Source of reference: http://www.geeksforgeeks.org/insertion-sort/
-*/
-template <typename T>
-void insertionSort(T size, T numbers[])
-{
-	T point, switchingPoint, tmp; //<-- This variable will act like a point at which the sorting will take place
-									//switchingPoint is the point at which the switch is made
-	for (long i = 1; i < size; i++)
-	{
-		// + 1 so switching point is begining 
-		point = numbers[i];
-		//start at the begining
-		switchingPoint = i - 1;
-
-		// need to go through the array until it hits a number it cannot be greater than then work up the list
-		while (switchingPoint >= 0 && numbers[switchingPoint] > point)
-		{
-			tmp = numbers[switchingPoint];
-			numbers[switchingPoint + 1] = tmp;
-			switchingPoint--;
-		}
-		numbers[switchingPoint + 1] = point;
-	}
-
-}
 
 //Quick Sorting
 /*
+purpose: to use the quickly sort the algorithm by us
 pre:numbers size, UB, LB
-post: print(sie, numbers)
-purpose: to use the quickly sort the algorithm by using the divide and conquer technique
+post: print(size, numbers)ing the divide and conquer technique
 */
 template <typename T>
-void quickSort(long size, T numbers[], long LB, long UB)
+void quickSort(T size, T *numbers, T LB, T UB)
 {
-	long tmp, i = LB, j = UB;
+	T tmp, i = LB, j = UB;
 	T pivot = numbers[(LB + UB) / 2];
 
 	while (i <= j)
@@ -188,6 +104,186 @@ void quickSort(long size, T numbers[], long LB, long UB)
 		quickSort(size, numbers, i, UB);
 	}
 }
+
+template <typename T>
+void quickSortAssembly(T size, T *numbers, T LB, T UB)
+{
+	cout << "Quick Sort Assembly" << endl;
+	__asm {
+		
+	}
+}
+//Selection Sorting
+/*
+Pre:numbers and size
+Post: print(size, numbers)
+purpose: Selection sort uses a selectioning method when it divides, by finding the minimum number and then rearranging by counting upwards
+*/
+template <typename T>
+void selectionSort(T size, T numbers[]) {
+	T minIndex, tmp;
+
+	for (T i = 0; i < size - 1; i++)
+	{
+		minIndex = i;
+		for (T j = i + 1; j < size; j++)
+		{
+			if (numbers[j] < numbers[minIndex])
+			{
+				minIndex = j;
+			}
+		}
+		if (minIndex != i)
+		{
+			tmp = numbers[i];
+			numbers[i] = numbers[minIndex];
+			numbers[minIndex] = tmp;
+		}
+	}
+}
+
+template <typename T>
+void selectionSortAssembly(T size, T numbers[])
+{
+	cout << "Selection Sort Assembly" << endl;
+	__asm {
+
+	}
+}
+//Insertion Sorting
+/*
+pre:size, numbers
+post:print(size, numbers)
+purpose: This algorithm is designed to sort an array using the insertion method as if it was like trading cards in your hand, picking and then placing the cards in the right order.
+This one was challening so I needed online help
+Source of reference: http://www.geeksforgeeks.org/insertion-sort/
+*/
+template <typename T>
+void insertionSort(T size, T numbers[])
+{
+	T point, switchingPoint, tmp; //<-- This variable will act like a point at which the sorting will take place
+									//switchingPoint is the point at which the switch is made
+	for (T i = 1; i < size; i++)
+	{
+		// + 1 so switching point is begining 
+		
+		point = numbers[i];
+		//start at the begining
+		switchingPoint = i - 1;
+
+		// need to go through the array until it hits a number it cannot be greater than then work up the list
+		while (switchingPoint >= 0 && numbers[switchingPoint] > point)
+		{
+			tmp = numbers[switchingPoint];
+			numbers[switchingPoint + 1] = tmp;
+			switchingPoint--;
+		}
+		numbers[switchingPoint + 1] = point;
+	}
+}
+
+template <typename T>
+void insertionSortAssembly(T size, T numbers[])
+{
+	cout << "Insertion Sort Assembly" << endl;
+	T point, switchingPoint, tmp; //<-- This variable will act like a point at which the sorting will take place
+									//switchingPoint is the point at which the switch is made
+	for (T i = 1; i < size; i++)
+	{
+		// + 1 so switching point is begining 
+
+		point = numbers[i];
+		//start at the begining
+		switchingPoint = i - 1;
+
+		// need to go through the array until it hits a number it cannot be greater than then work up the list
+		while (switchingPoint >= 0 && numbers[switchingPoint] > point)
+		{
+			
+			tmp = numbers[switchingPoint];
+			/*
+			numbers[switchingPoint + 1] = tmp;
+			switchingPoint--;
+			*/
+			__asm {
+				mov eax, tmp
+				mov ebx, switchingPoint
+				inc ebx
+				
+				mov [numbers + (ebx * 4)], eax
+				lea edi, numbers
+				dec switchingPoint
+
+			}
+		}
+		numbers[switchingPoint + 1] = point;
+	}
+}
+
+template <typename T>
+void executeSort(string method, T size, T *mData) {
+
+	//Implement Timer
+	TimerSystem timer;
+	//timing and the sorting
+	cout.setf(ios::fixed | ios::showpoint);
+	cout.precision(8);	
+	try
+	{
+		//Implement Timer Here in logic flow
+	if (method == "quickC") {
+		T LB = 0, UB = size - 1;
+		timer.startClock();
+		quickSort(size, mData, LB, UB);
+		cout << timer.getTime() << endl;
+		//printArray(size, mData);
+	}
+	else if(method == "quickAsm")
+	{
+		T LB = 0, UB = size - 1;
+		timer.startClock();
+		quickSortAssembly(size, mData, LB, UB);
+		cout << timer.getTime() << endl;
+	}
+	else if (method == "selectC")
+	{
+		timer.startClock();
+		selectionSort(size, mData);
+		cout << timer.getTime() << endl;
+		//printArray(size, mData);
+	}
+	else if (method == "selectAsm") 
+	{
+		timer.startClock();
+		selectionSortAssembly(size, mData);
+		cout << timer.getTime() << endl;
+	}
+	else if (method == "insertC")
+	{
+		timer.startClock();
+		insertionSort(size, mData);
+		cout << timer.getTime() << endl;
+		printArray(size, mData);
+		//printArray(size, mData);
+	}
+	else if (method == "insertAsm")
+	{
+		timer.startClock();
+		insertionSortAssembly(size, mData);
+		cout << timer.getTime() << endl;
+		printArray(size, mData);
+	}
+	else
+	{
+		throw "ERROR";
+	}
+	}
+	catch (const string error) {
+		cout << error << endl;
+	}
+	
+}
+
 
 
 #endif
