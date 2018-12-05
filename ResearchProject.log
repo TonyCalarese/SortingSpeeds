@@ -1,0 +1,113 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.11.5)  7 NOV 2018 11:11
+entering extended mode
+**"C:/Users/ACCal/OneDrive/Desktop/Tonys Bullshit/ResearchProject.tex"
+("C:/Users/ACCal/OneDrive/Desktop/Tonys Bullshit/ResearchProject.tex"
+LaTeX2e <2018-04-01> patch level 5
+("C:\Users\ACCal\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\article.cls"
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+("C:\Users\ACCal\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\size10.clo"
+File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+No file ResearchProject.aux.
+\openout1 = `ResearchProject.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+
+LaTeX Warning: Citation `Hall' on page 1 undefined on input line 16.
+
+
+LaTeX Warning: Citation `bibSource' on page 1 undefined on input line 16.
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 16.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 16.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 16.
+
+Underfull \hbox (badness 10000) in paragraph at lines 18--22
+
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 26.
+("C:\Users\ACCal\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 26.
+
+
+LaTeX Warning: Citation `functions' on page 1 undefined on input line 38.
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 50.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 50.
+[1
+
+{C:/Users/ACCal/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2]
+Overfull \hbox (158.46605pt too wide) in paragraph at lines 88--92
+[]\OT1/cmr/m/n/10 Brian R. Hall \OT1/cmr/m/it/10 Re-search1.pdf \OT1/cmr/m/n/10
+ [\OT1/cmtt/m/n/10 https://champlain.instructure.com/courses/903034/assignments
+/9499138\OT1/cmr/m/n/10 ].
+ []
+
+
+Overfull \hbox (44.14229pt too wide) in paragraph at lines 94--96
+\OT1/cmtt/m/n/10 https://www.overleaf.com/learn/latex/Bibliography[]management[
+]with[]bibtex 
+ []
+
+)
+Runaway argument?
+{https://www.authorea.com/users/77723/articles/110898\-{}how\-{}to\-{\ETC.
+! File ended while scanning use of \texttt .
+<inserted text> 
+                \par 
+<*> ...Desktop/Tonys Bullshit/ResearchProject.tex"
+                                                  
+? yes
+Type <return> to proceed, S to scroll future error messages,
+R to run without stopping, Q to run quietly,
+I to insert something, 
+H for help, X to quit.
+? R
+OK, entering \nonstopmode...
+! Emergency stop.
+<*> ...Desktop/Tonys Bullshit/ResearchProject.tex"
+                                                  
+*** (job aborted, no legal \end found)
+
+ 
+Here is how much of TeX's memory you used:
+ 255 strings out of 492970
+ 3139 string characters out of 3126594
+ 62741 words of memory out of 3000000
+ 4201 multiletter control sequences out of 15000+200000
+ 8409 words of font info for 30 fonts, out of 3000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 23i,6n,22p,370b,246s stack positions out of 5000i,500n,10000p,200000b,50000s
+!  ==> Fatal error occurred, no output PDF file produced!

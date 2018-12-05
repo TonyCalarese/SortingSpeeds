@@ -80,5 +80,25 @@ string getMethod()
 	};
 }
 
+extern "C" void printArrayFromAssembly(int mData[]) {
+	//source of reference for self sizing: https://stackoverflow.com/questions/4108313/how-do-i-find-the-length-of-an-array
+	int size = (sizeof(mData) / sizeof(*mData));
+	cout << "Size of the array: " << size << endl;
+	for (int i = 0; i < size; i++)
+	{
+		for (int j = 0; j < 10; j++)
+		{
+			cout << mData[i] << " ";
+			i++;
+			if (i >= size)
+			{
+				break;
+			}
+		}
+		cout << endl;
+	}
+
+}
+
 
 

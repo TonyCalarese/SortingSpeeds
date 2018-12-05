@@ -36,10 +36,11 @@ using namespace std;
 
 //Headers
 #include "timerSystem.h"
-
+//Assembly functions
+extern "C"  void _insertionSortAsm(int);
 //Purely C++ Functions
 //------------------------------------------------
-void get_C_Menu();
+extern "C" void get_C_Menu();
 string getMethod();
 
 template <typename T>
@@ -61,6 +62,7 @@ void printArray(T size, T *mData) {
 
 }
 
+extern "C" void printArray(int, int); 
 
 //Quick Sorting
 /*
@@ -146,9 +148,7 @@ template <typename T>
 void selectionSortAssembly(T size, T numbers[])
 {
 	cout << "Selection Sort Assembly" << endl;
-	__asm {
 
-	}
 }
 //Insertion Sorting
 /*
@@ -186,38 +186,6 @@ template <typename T>
 void insertionSortAssembly(T size, T numbers[])
 {
 	cout << "Insertion Sort Assembly" << endl;
-	T point, switchingPoint, tmp; //<-- This variable will act like a point at which the sorting will take place
-									//switchingPoint is the point at which the switch is made
-	for (T i = 1; i < size; i++)
-	{
-		// + 1 so switching point is begining 
-
-		point = numbers[i];
-		//start at the begining
-		switchingPoint = i - 1;
-
-		// need to go through the array until it hits a number it cannot be greater than then work up the list
-		while (switchingPoint >= 0 && numbers[switchingPoint] > point)
-		{
-			
-			tmp = numbers[switchingPoint];
-			/*
-			numbers[switchingPoint + 1] = tmp;
-			switchingPoint--;
-			*/
-			__asm {
-				mov eax, tmp
-				mov ebx, switchingPoint
-				inc ebx
-				
-				mov [numbers + (ebx * 4)], eax
-				lea edi, numbers
-				dec switchingPoint
-
-			}
-		}
-		numbers[switchingPoint + 1] = point;
-	}
 }
 
 template <typename T>
@@ -269,7 +237,11 @@ void executeSort(string method, T size, T *mData) {
 	else if (method == "insertAsm")
 	{
 		timer.startClock();
-		insertionSortAssembly(size, mData);
+		
+		_insertionSortAsm(int(mData));
+		// fails when we try to run it
+		//cd \Users\ACCal\source\repos\ResearchAssignment\ResearchAssignment
+		//ml /c /Cx /coff sorting.asm
 		cout << timer.getTime() << endl;
 		printArray(size, mData);
 	}
